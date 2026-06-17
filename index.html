@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Derek Ryan — Business Development &amp; Partnerships</title>
+<meta name="description" content="Derek Ryan — Business Development &amp; Partnerships in language technology and AI. Driving six and seven-figure growth across e-Commerce, Aerospace, Film &amp; TV, Fintech and Gaming." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0A0C12;
+    --panel:#11141C;
+    --panel-2:#161B26;
+    --line:#242C3B;
+    --text:#E8EEF6;
+    --muted:#8A95A8;
+    --teal:#5EEAD4;     /* primary accent */
+    --amber:#F4B860;    /* results / metrics */
+    --violet:#A78BFA;   /* prompts, sparing */
+    --maxw:1080px;
+
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"IBM Plex Sans",system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle grid texture */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px,transparent 1px),
+      linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;
+    opacity:.05;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+  .mono{font-family:var(--mono)}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--teal);
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{content:"// "}
+
+  h1,h2,h3{font-family:var(--display);line-height:1.1;font-weight:600;letter-spacing:-.01em}
+
+  /* skip link */
+  .skip{position:absolute;left:-999px;top:0;background:var(--teal);color:#04211d;padding:10px 16px;border-radius:0 0 8px 0;font-family:var(--mono);font-size:.85rem;z-index:100}
+  .skip:focus{left:0}
+
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:40;
+    background:rgba(10,12,18,.78);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:20px;height:60px}
+  .brand{font-family:var(--mono);font-size:.95rem;font-weight:500;color:var(--text);white-space:nowrap}
+  .brand .pr{color:var(--violet)}
+  .brand .cu{color:var(--teal)}
+  .nav-links{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .nav-links a{
+    font-family:var(--mono);font-size:.85rem;color:var(--muted);
+    padding:8px 12px;border-radius:7px;transition:color .2s,background .2s;
+  }
+  .nav-links a:hover{color:var(--text);background:var(--panel-2)}
+  .lang{
+    font-family:var(--mono);font-size:.78rem;color:var(--muted);
+    border:1px solid var(--line);border-radius:7px;overflow:hidden;display:flex;
+  }
+  .lang button{
+    background:none;border:none;color:var(--muted);font-family:var(--mono);
+    font-size:.78rem;padding:7px 11px;cursor:pointer;transition:color .2s,background .2s;
+  }
+  .lang button[aria-pressed="true"]{background:var(--teal);color:#04211d;font-weight:600}
+  @media(max-width:640px){
+    .nav-links a:not(.nav-skip-mobile){display:none}
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:64px 0 40px}
+  .term{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 30px 80px -40px rgba(0,0,0,.9);
+  }
+  .term-bar{
+    display:flex;align-items:center;gap:8px;
+    padding:13px 16px;border-bottom:1px solid var(--line);
+    background:var(--panel-2);
+  }
+  .dot{width:12px;height:12px;border-radius:50%}
+  .dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+  .term-title{margin-left:10px;font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+  .term-body{padding:28px clamp(18px,4vw,34px) 34px;font-family:var(--mono);font-size:.95rem;min-height:230px}
+  .line{white-space:pre-wrap;word-break:break-word}
+  .prompt{color:var(--violet)}
+  .prompt .path{color:var(--teal)}
+  .out-name{font-family:var(--display);font-size:clamp(2.3rem,7vw,3.6rem);font-weight:700;letter-spacing:-.02em;color:var(--text);line-height:1.05;margin:6px 0 2px}
+  .out-role{color:var(--teal);font-size:1rem}
+  .out-tag{color:var(--text);font-family:var(--body);font-size:clamp(1.05rem,2.6vw,1.3rem);line-height:1.4;max-width:36ch;margin-top:4px}
+  .comment{color:var(--muted)}
+  .cursor{display:inline-block;width:9px;height:1.05em;background:var(--teal);vertical-align:-2px;margin-left:3px;animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  @media(prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .btn{
+    font-family:var(--mono);font-size:.9rem;font-weight:500;
+    padding:13px 22px;border-radius:9px;cursor:pointer;border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:9px;transition:transform .15s,background .2s,border-color .2s;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--teal);color:#04211d;font-weight:600}
+  .btn-primary:hover{background:#7ff0de}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:42px}
+  .sec-head h2{font-size:clamp(1.7rem,4.5vw,2.4rem)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:44px}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:30px}}
+  .about p{color:#cbd3e1;font-size:1.08rem}
+  .about p+p{margin-top:16px}
+  .facts{font-family:var(--mono);font-size:.86rem}
+  .facts h3{font-family:var(--mono);font-size:.78rem;color:var(--teal);letter-spacing:.04em;margin-bottom:14px;font-weight:500}
+  .facts h3::before{content:"$ "}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--line);background:var(--panel);color:#c4cdda;padding:6px 12px;border-radius:20px;font-size:.8rem}
+  .chip:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* experience */
+  .xp{display:flex;flex-direction:column;gap:18px}
+  .role{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:13px;
+    padding:24px clamp(18px,3vw,30px);
+    position:relative;
+    transition:border-color .25s,transform .25s;
+  }
+  .role:hover{border-color:#33405a;transform:translateY(-2px)}
+  .role-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .role-title{font-family:var(--display);font-size:1.3rem;font-weight:600}
+  .role-title .at{color:var(--teal)}
+  .role-date{font-family:var(--mono);font-size:.8rem;color:var(--muted);white-space:nowrap}
+  .role-sub{font-family:var(--mono);font-size:.85rem;color:var(--violet);margin-top:6px}
+  .role-val{font-family:var(--mono);font-size:.8rem;color:var(--amber);margin-top:4px}
+  .role ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}
+  .role li{position:relative;padding-left:22px;color:#cbd3e1;font-size:1rem}
+  .role li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--teal);font-family:var(--mono);font-weight:600}
+  .role li b{color:var(--text);font-weight:600}
+  .result{
+    margin-top:18px;padding:14px 16px;border-radius:9px;
+    background:rgba(244,184,96,.06);border:1px solid rgba(244,184,96,.25);
+    font-size:.97rem;color:#f6dcae;
+  }
+  .result .tag{font-family:var(--mono);font-size:.72rem;color:var(--amber);letter-spacing:.05em;display:block;margin-bottom:5px}
+  .result .tag::before{content:"→ "}
+
+  /* stack */
+  .stack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:680px){.stack-grid{grid-template-columns:1fr}}
+  .stack-card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:22px 24px}
+  .stack-card h3{font-family:var(--mono);font-size:.85rem;color:var(--teal);margin-bottom:14px;font-weight:500}
+  .stack-card h3::before{content:"# "}
+  .stack-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag-item{font-family:var(--mono);font-size:.82rem;background:var(--panel-2);border:1px solid var(--line);color:#cbd3e1;padding:6px 11px;border-radius:7px}
+  .tag-item:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* education */
+  .edu{display:flex;flex-direction:column;gap:14px}
+  .edu-item{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px 22px}
+  .edu-item .deg{font-family:var(--display);font-weight:600;font-size:1.08rem}
+  .edu-item .inst{font-family:var(--mono);font-size:.82rem;color:var(--muted);margin-top:3px}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:30px}}
+  .contact-intro p{color:#cbd3e1;margin-bottom:22px;max-width:34ch}
+  .links{display:flex;flex-direction:column;gap:12px;font-family:var(--mono);font-size:.9rem}
+  .links a{display:flex;gap:10px;align-items:center;color:#cbd3e1}
+  .links a:hover{color:var(--teal)}
+  .links a span{color:var(--teal)}
+
+  form{display:flex;flex-direction:column;gap:14px}
+  label{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:-7px}
+  input,textarea{
+    background:var(--panel);border:1px solid var(--line);border-radius:9px;
+    color:var(--text);font-family:var(--body);font-size:1rem;padding:12px 14px;width:100%;
+    transition:border-color .2s;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--teal)}
+  textarea{resize:vertical;min-height:120px}
+  .form-note{font-family:var(--mono);font-size:.78rem;color:var(--muted);min-height:1.2em}
+  .form-note.ok{color:var(--teal)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center}
+  footer .mono{font-size:.8rem;color:var(--muted)}
+  footer .mono .cu{color:var(--teal)}
+</style>
+</head>
+<body>
+<a href="#about" class="skip">Skip to content</a>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">derek<span class="pr">@</span>ryan<span class="cu"> ~ %</span></a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav.about">about</a>
+      <a href="#experience" data-i18n="nav.exp">experience</a>
+      <a href="#stack" data-i18n="nav.stack">stack</a>
+      <a href="#contact" data-i18n="nav.contact">contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="lang-en" aria-pressed="true">EN</button>
+        <button id="lang-sv" aria-pressed="false">SV</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<a id="top"></a>
+<header class="hero">
+  <div class="wrap">
+    <div class="term">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">derek@globalisation — zsh</span>
+      </div>
+      <div class="term-body" id="term"></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="Derek_Ryan_CV.pdf" download>
+        <span>⬇</span><span data-i18n="cta.cv">Download CV</span>
+      </a>
+      <a class="btn btn-ghost" href="#contact"><span data-i18n="cta.contact">Get in touch</span> →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="eb.about">profile</span>
+        <h2 data-i18n="h.about">A foot in business, a foot in the tech</h2>
+        <p style="margin-top:22px">A versatile Sales, Marketing &amp; Operations professional with a specialist understanding of the localisation environment and global business engagement — translating language technology into revenue.</p>
+        <p>Delivering success across e-Commerce, Space &amp; Aerospace, Film &amp; TV, e-Learning, Fintech and Gaming through six and seven-figure sales contracts and account-management portfolios, and running international marketing campaigns for film and gaming lifecycles. A team player who learns and evolves with each role.</p>
+      </div>
+      <div class="facts reveal">
+        <h3 data-i18n="facts.ind">industries</h3>
+        <div class="chips" style="margin-bottom:26px">
+          <span class="chip">e-Commerce</span>
+          <span class="chip">Space &amp; Aerospace</span>
+          <span class="chip">Film &amp; TV</span>
+          <span class="chip">e-Learning</span>
+          <span class="chip">Fintech</span>
+          <span class="chip">Gaming</span>
+        </div>
+        <h3 data-i18n="facts.lang">languages</h3>
+        <div class="chips">
+          <span class="chip">English — native</span>
+          <span class="chip">Svenska — intermediate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="eb.exp">git log --author=derek</span>
+      <h2 data-i18n="h.exp">Experience</h2>
+    </div>
+    <div class="xp">
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Founder <span class="at">@</span> Thirty Tree Consultancy</div>
+          <div class="role-date">Present</div>
+        </div>
+        <div class="role-sub">Globalisation &amp; Language Technology</div>
+        <ul>
+          <li>Independent consultancy advising on globalisation strategy and the adoption of language technology for international growth.</li>
+        </ul>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Director, Business Development &amp; Partnerships <span class="at">@</span> Alpha CRC</div>
+          <div class="role-date">Jan 2026 — Present</div>
+        </div>
+        <div class="role-sub">Translation technology solution provider · LLM agentic workflows &amp; AI-Translate</div>
+        <ul>
+          <li>Research and develop opportunities with genuine intent to buy using <b>ZoomInfo</b> and <b>Pipedrive</b>; expert in <b>BANT</b> &amp; <b>MEDDPICC</b> qualification.</li>
+          <li>Created sales-support documentation for new technology offerings — LLM model training and agents — and helped the AM team build a narrative for selling LLM technology to customers.</li>
+          <li>Expanded the customer base through outreach to new teams and drove technology adoption.</li>
+          <li>Actively sell studio services: voice-over, dubbing (AI &amp; human), subtitling, mixing and podcast recording.</li>
+          <li>Build the frameworks for partnerships to share technology, insights and customers; identify and attend conferences (exhibited once, eight walk-ons, one in Germany).</li>
+          <li>Demo and introduce Alpha to new prospects, owning deck preparation and the technical focus of the conversation.</li>
+        </ul>
+        <div class="result"><span class="tag" data-i18n="res">Results</span>£250k from an internal sale, two more deals in the pipeline, and a partnership programme in negotiation with two major businesses.</div>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Senior Account Director <span class="at">@</span> LILT AI</div>
+          <div class="role-date">Jan 2025 — Aug 2025</div>
+        </div>
+        <div class="role-sub">SaaS platform supplying AI language solutions</div>
+        <ul>
+          <li>Daily strategy and management of 15+ high-profile customers across e-Learning, e-Commerce, Aerospace, Film &amp; TV, Fintech and SaaS.</li>
+          <li>Acted as a conduit between clients and the programme team — adopting new technology, aligning services and building optimised workflows for a changing landscape.</li>
+          <li>Maintained and delivered on cost, quality and delivery KPIs in <b>Planhat</b>; mentored and trained the ADR team in customer success, vendor management and sales.</li>
+          <li>Nurtured long-term, high-value relationships as a trusted advisor, and worked with AEs on outreach strategy, supporting content and deal structuring.</li>
+          <li>Drove CRM-led growth (<b>Salesforce</b>) and LinkedIn engagement, expanding into new markets and services and converting partnerships to SaaS-style billing.</li>
+        </ul>
+        <div class="result"><span class="tag" data-i18n="res">Results</span>Onboarded 4 new clients in the first 6 months — two with programmes worth over £1 million — and helped create a new set of multimedia service types offered to all customers.</div>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Enterprise Account Manager <span class="at">@</span> Translated</div>
+          <div class="role-date">Sep 2022 — Dec 2024</div>
+        </div>
+        <div class="role-sub">Localisation services, machine translation &amp; LLM model building</div>
+        <div class="role-val">Individually managed value — $5 million</div>
+        <ul>
+          <li>Day-to-day maintenance, management and growth of 6 high-profile clients across Space &amp; Aerospace, e-Commerce, e-Learning and Fintech.</li>
+          <li>Onboarded new clients with tailored account plans — balancing human intervention and AI-Translate — and supported sales teams and AEs throughout contracting (<b>HubSpot</b>).</li>
+          <li>Led client meetings, built shared presentations, and acted as a thought leader guiding clients through the evolution of the technology.</li>
+          <li>Joined a task force to optimise account-management roles and processes; planned and managed QBRs year-round.</li>
+          <li>Worked with the integrations team on discovery and delivery of new connectivity for clients.</li>
+        </ul>
+        <div class="result"><span class="tag" data-i18n="res">Results</span>Grew one partner from $250k to over $1 million in a year and onboarded a new client worth $2.5 million, building an evolutionary chain of technology adoption into their environment.</div>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Media Content Manager <span class="at">@</span> Electronic Arts</div>
+          <div class="role-date">Jun 2021 — Aug 2022</div>
+        </div>
+        <div class="role-sub">Content, adaptation &amp; localisation — sports games</div>
+        <ul>
+          <li>Managed the entire international campaign for EA Sports FC, Madden, NHL and others — organic, paid and biddable media across AV, social, OOH and print (<b>Smartsheet</b>).</li>
+          <li>Owned all communication with brand managers, marketing strategy and production to plan extensive schedules, expenses and delivery timelines.</li>
+          <li>Ran vendor selection and management against KPIs and SLAs, with QBR recaps; handled financial management, PO creation and reporting (<b>Coupa</b>).</li>
+          <li>Created specialised content per campaign and channel — trailer cut-downs and adaptations — including the highly successful "FUT Reveal" series for EA Sports FC.</li>
+        </ul>
+      </article>
+
+      <article class="role reveal">
+        <div class="role-top">
+          <div class="role-title">Marketing Content Manager <span class="at">@</span> Warner Bros.</div>
+          <div class="role-date">Jun 2019 — Dec 2020</div>
+        </div>
+        <div class="role-sub">International distribution — trailers, dubbing &amp; subtitling</div>
+        <ul>
+          <li>Content localisation and distribution across subtitling and dubbing.</li>
+          <li>Territory management and delivery scheduling.</li>
+          <li>Operational guidance and technology management.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="eb.stack">dependencies</span>
+      <h2 data-i18n="h.stack">Stack &amp; tools</h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card reveal">
+        <h3>crm &amp; sales ops</h3>
+        <div class="stack-tags">
+          <span class="tag-item">Salesforce</span><span class="tag-item">HubSpot</span>
+          <span class="tag-item">Pipedrive</span><span class="tag-item">ZoomInfo</span>
+          <span class="tag-item">Planhat</span>
+        </div>
+      </div>
+      <div class="stack-card reveal">
+        <h3>frameworks</h3>
+        <div class="stack-tags">
+          <span class="tag-item">BANT</span><span class="tag-item">MEDDPICC</span>
+          <span class="tag-item">QBRs</span><span class="tag-item">Account planning</span>
+        </div>
+      </div>
+      <div class="stack-card reveal">
+        <h3>ops &amp; finance</h3>
+        <div class="stack-tags">
+          <span class="tag-item">Smartsheet</span><span class="tag-item">Coupa</span>
+          <span class="tag-item">Vendor &amp; KPI/SLA mgmt</span>
+        </div>
+      </div>
+      <div class="stack-card reveal">
+        <h3>domain</h3>
+        <div class="stack-tags">
+          <span class="tag-item">LLM agentic workflows</span><span class="tag-item">AI-Translate</span>
+          <span class="tag-item">Machine translation</span><span class="tag-item">Dubbing &amp; subtitling</span>
+          <span class="tag-item">Localisation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:60px">
+      <span class="eyebrow" data-i18n="eb.edu">cat education.txt</span>
+      <h2 data-i18n="h.edu">Education</h2>
+    </div>
+    <div class="edu">
+      <div class="edu-item reveal">
+        <div class="deg">BSc Computer Applications &amp; Commercial Programming</div>
+        <div class="inst">Carlow IT, Ireland</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="deg">Leaving Certificate</div>
+        <div class="inst">Roscrea CC, Ireland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="eb.contact">./contact.sh</span>
+      <h2 data-i18n="h.contact">Get in touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-intro reveal">
+        <p data-i18n="contact.intro">Open to conversations about business development, partnerships and language technology. Send a note and I'll get back to you.</p>
+        <div class="links">
+          <a href="mailto:derekjwryan@gmail.com"><span>email</span> derekjwryan@gmail.com</a>
+          <a href="tel:+447851926721"><span>phone</span> +44 7851 926721</a>
+          <a href="https://www.linkedin.com/in/derekryan5110/" target="_blank" rel="noopener"><span>linkedin</span> /in/derekryan5110</a>
+        </div>
+      </div>
+      <form class="reveal" id="contact-form" novalidate>
+        <label for="cf-name" data-i18n="form.name">Name</label>
+        <input id="cf-name" name="name" type="text" autocomplete="name" required />
+        <label for="cf-email" data-i18n="form.email">Email</label>
+        <input id="cf-email" name="email" type="email" autocomplete="email" required />
+        <label for="cf-msg" data-i18n="form.msg">Message</label>
+        <textarea id="cf-msg" name="message" required></textarea>
+        <button class="btn btn-primary" type="submit" data-i18n="form.send">Send message</button>
+        <p class="form-note" id="cf-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">Derek Ryan © 2026 &nbsp;·&nbsp; built with html, css &amp; <span class="cu">a blinking cursor</span></p>
+  </div>
+</footer>
+
+<script>
+/* ---------- i18n ---------- */
+const I18N = {
+  en:{
+    "nav.about":"about","nav.exp":"experience","nav.stack":"stack","nav.contact":"contact",
+    "cta.cv":"Download CV","cta.contact":"Get in touch",
+    "eb.about":"profile","h.about":"A foot in business, a foot in the tech",
+    "facts.ind":"industries","facts.lang":"languages",
+    "eb.exp":"git log --author=derek","h.exp":"Experience","res":"Results",
+    "eb.stack":"dependencies","h.stack":"Stack & tools",
+    "eb.edu":"cat education.txt","h.edu":"Education",
+    "eb.contact":"./contact.sh","h.contact":"Get in touch",
+    "contact.intro":"Open to conversations about business development, partnerships and language technology. Send a note and I'll get back to you.",
+    "form.name":"Name","form.email":"Email","form.msg":"Message","form.send":"Send message"
+  },
+  sv:{
+    "nav.about":"om","nav.exp":"erfarenhet","nav.stack":"verktyg","nav.contact":"kontakt",
+    "cta.cv":"Ladda ner CV","cta.contact":"Kontakta mig",
+    "eb.about":"profil","h.about":"En fot i affärerna, en fot i tekniken",
+    "facts.ind":"branscher","facts.lang":"språk",
+    "eb.exp":"git log --author=derek","h.exp":"Erfarenhet","res":"Resultat",
+    "eb.stack":"beroenden","h.stack":"Verktyg",
+    "eb.edu":"cat utbildning.txt","h.edu":"Utbildning",
+    "eb.contact":"./kontakt.sh","h.contact":"Kontakta mig",
+    "contact.intro":"Öppen för samtal om affärsutveckling, partnerskap och språkteknologi. Skicka ett meddelande så återkommer jag.",
+    "form.name":"Namn","form.email":"E-post","form.msg":"Meddelande","form.send":"Skicka meddelande"
+  }
+};
+const TAGLINE = {
+  en:"Building revenue where language, AI and global business meet.",
+  sv:"Skapar tillväxt där språk, AI och global affärsverksamhet möts."
+};
+let lang = "en";
+
+function applyLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(I18N[l][k]!==undefined) el.textContent = I18N[l][k];
+  });
+  document.getElementById("lang-en").setAttribute("aria-pressed", l==="en");
+  document.getElementById("lang-sv").setAttribute("aria-pressed", l==="sv");
+  const tag = document.querySelector(".out-tag");
+  if(tag) tag.textContent = TAGLINE[l];
+}
+document.getElementById("lang-en").addEventListener("click",()=>applyLang("en"));
+document.getElementById("lang-sv").addEventListener("click",()=>applyLang("sv"));
+
+/* ---------- hero terminal ---------- */
+const promptHTML = '<span class="prompt"><span class="path">derek@globalisation</span> ~ %</span> ';
+const term = document.getElementById("term");
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const seq = [
+  {type:"cmd", text:"whoami"},
+  {type:"html", html:'<div class="out-name">Derek Ryan</div><div class="out-role">Business Development &amp; Partnerships</div>'},
+  {type:"cmd", text:"cat tagline.txt"},
+  {type:"html", html:'<div class="out-tag">'+TAGLINE.en+'</div>'},
+  {type:"comment", text:"# localisation · language technology · AI"}
+];
+
+function addPromptLine(){
+  const d=document.createElement("div"); d.className="line"; d.innerHTML=promptHTML;
+  term.appendChild(d); return d;
+}
+
+async function typeText(el, text, speed){
+  for(let i=0;i<text.length;i++){
+    el.insertAdjacentText("beforeend", text[i]);
+    await new Promise(r=>setTimeout(r, speed));
+  }
+}
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+async function runTerminal(){
+  if(reduce){
+    seq.forEach(step=>{
+      if(step.type==="cmd"){ const l=addPromptLine(); l.insertAdjacentText("beforeend", step.text); }
+      else if(step.type==="comment"){ const d=document.createElement("div"); d.className="line comment"; d.textContent=step.text; term.appendChild(d); }
+      else { const d=document.createElement("div"); d.className="line"; d.innerHTML=step.html; term.appendChild(d); }
+    });
+    const c=document.createElement("span"); c.className="cursor"; addPromptLine().appendChild(c);
+    return;
+  }
+  for(const step of seq){
+    if(step.type==="cmd"){
+      const line=addPromptLine();
+      const span=document.createElement("span"); line.appendChild(span);
+      await typeText(span, step.text, 55);
+      await sleep(320);
+    } else if(step.type==="comment"){
+      const d=document.createElement("div"); d.className="line comment"; d.textContent=step.text; term.appendChild(d);
+      await sleep(180);
+    } else {
+      const d=document.createElement("div"); d.className="line"; d.innerHTML=step.html; term.appendChild(d);
+      await sleep(360);
+    }
+  }
+  const c=document.createElement("span"); c.className="cursor";
+  const last=addPromptLine(); last.appendChild(c);
+}
+runTerminal();
+
+/* ---------- scroll reveal ---------- */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+},{threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".reveal").forEach((el,i)=>{
+  el.style.transitionDelay = (Math.min(i%4,3)*60)+"ms";
+  io.observe(el);
+});
+
+/* ---------- contact form (mailto) ---------- */
+/* No backend on a static host: this opens the visitor's mail client with the
+   message pre-filled. To collect submissions server-side instead, swap in a
+   service like Formspree — set the <form> action to your Formspree URL and
+   method="POST", then remove this handler. */
+const form = document.getElementById("contact-form");
+const note = document.getElementById("cf-note");
+form.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  const name=form.name.value.trim();
+  const email=form.email.value.trim();
+  const msg=form.message.value.trim();
+  if(!name||!email||!msg){
+    note.className="form-note";
+    note.textContent = lang==="sv" ? "Fyll i alla fält." : "Please fill in every field.";
+    return;
+  }
+  const subject = encodeURIComponent(`Website enquiry from ${name}`);
+  const body = encodeURIComponent(`${msg}\n\n— ${name}\n${email}`);
+  window.location.href = `mailto:derekjwryan@gmail.com?subject=${subject}&body=${body}`;
+  note.className="form-note ok";
+  note.textContent = lang==="sv" ? "Öppnar din e-postklient…" : "Opening your mail client…";
+});
+</script>
+</body>
+</html>
